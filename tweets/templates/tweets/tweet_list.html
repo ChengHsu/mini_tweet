@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load recommended %}
+{% block title %}Tweet ME{% endblock  %}
+
+{% block script %}
+$( document ).ready(function() {
+    loadTweetContainer("tweet-container")
+});
+{% endblock script %}
+
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="profile-img"><img src="{{ request.user.profile.avatar.url }}" class="img-fluid" /></div>
+        <br>
+        <h2 class="text-center">{{ request.user }}</h2>
+        <hr/>
+        {% recommended request.user %}
+    </div>
+    <div class="col-sm-9">
+
+{% if not request.GET.q %}
+    <div class="">
+        {% include "tweets/form.html" with form=create_form action_url=create_url btn_title='Tweet' form_class='tweet_form' %}
+    </div>
+{% endif %}
+<br>
+<div id="tweet-container"  data-url="/api/tweets/">
+
+</div>
+<span id="loadmore">Load More ... </span>
+<br><br>
+
+{% comment %} 
+{% for obj in object_list %}
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                {% if obj.img %}
+                    <img src="img_avatar1.png" class="media-object" style="width:60px">
+                {% endif %}
+                </a>
+            </div>
+            <div class="media-body">
+                {{ obj.content }} | <br>
+                via : {{ obj.user }} | {{ obj.timestamp|timesince }} ago <a href="{{ obj.get_absolute_url }}">View</a>
+            </div>
+        </div>
+        <hr/>
+        {% empty %}
+            {% if request.GET.q %}
+                <p>No Tweet Found </p>
+            {% else %}
+                <p>EMPTY FORM</p>
+            {% endif %}
+{% endfor %} {% endcomment %}
+
+    </div>
+</div>
+
+{% endblock content %}
+
