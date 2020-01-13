@@ -1,4 +1,4 @@
-# Twitter-like web app
+# Post Fun
 
 Twitter-like web app built with Django with Bootstrap and Ajax
 
