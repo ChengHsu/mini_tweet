@@ -1,6 +1,6 @@
 # Post Fun
 
-Twitter-like web app built with Django with Bootstrap and Ajax
+Twitter-like web app built with Django with Bootstra, Ajax. Static assests are hosted on AWS S3
 
 <img src="./screenshot/home-page.png" width="700" height="400" />
 
@@ -10,6 +10,7 @@ Twitter-like web app built with Django with Bootstrap and Ajax
 - Twitter Bootstrap
 - Ajax
 - jQuery
+- AWS S3
 
 ### To Do
-- Working on optimizing performance by adding Caching layer(**Redis**) and using **Solr** to provide search functionality
+- Working on using **Solr** to provide search functionality
