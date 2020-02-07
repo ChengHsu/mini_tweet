@@ -1,6 +1,8 @@
 # Post Fun
 
-Twitter-like web app built with Django with Bootstra, Ajax. Static assests are hosted on AWS S3
+Twitter-like web app built with Django with Bootstra, Ajax. 
+
+Static assests are hosted on AWS S3
 
 <img src="./screenshot/home-page.png" width="700" height="400" />
 
